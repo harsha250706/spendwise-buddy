@@ -30,6 +30,11 @@ const App = () => (
 
         <div className="min-h-screen w-full overflow-x-hidden">
 
+  <DesktopSidebar />
+
+  <div className="lg:ml-64">
+
+    <Routes>
           <Routes>
 
             <Route
