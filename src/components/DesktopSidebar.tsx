@@ -43,6 +43,7 @@ const DesktopSidebar = () => {
 
   return (
     <aside
+      className="desktop-sidebar flex flex-col bg-card border-r border-border"
       style={{
         width: "260px",
         position: "fixed",
@@ -51,23 +52,19 @@ const DesktopSidebar = () => {
         bottom: 0,
         zIndex: 9999,
       }}
-     className="flex flex-col bg-card border-r border-border"
     >
 
-      {/* LOGO */}
+      {/* Logo */}
 
       <div className="h-20 flex items-center px-6 border-b border-border">
 
         <div className="flex items-center gap-3">
 
           <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center">
-
             <Wallet className="w-5 h-5 text-primary-foreground" />
-
           </div>
 
           <div>
-
             <h1 className="font-display font-bold text-lg text-foreground">
               SpendSmart
             </h1>
@@ -75,15 +72,13 @@ const DesktopSidebar = () => {
             <p className="text-[10px] text-muted-foreground">
               Smart money management
             </p>
-
           </div>
 
         </div>
 
       </div>
 
-
-      {/* NAVIGATION */}
+      {/* Navigation */}
 
       <div className="flex-1 px-4 py-6">
 
@@ -97,29 +92,17 @@ const DesktopSidebar = () => {
 
             const Icon = item.icon;
 
-            const active =
-              location.pathname === item.path;
+            const active = location.pathname === item.path;
 
             return (
               <button
                 key={item.path}
                 onClick={() => navigate(item.path)}
-                className={`
-                  w-full
-                  flex
-                  items-center
-                  gap-3
-                  px-4
-                  py-3
-                  rounded-xl
-                  transition-all
-                  text-left
-                  ${
-                    active
-                      ? "bg-primary text-primary-foreground"
-                      : "text-muted-foreground hover:bg-muted hover:text-foreground"
-                  }
-                `}
+                className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-all text-left ${
+                  active
+                    ? "bg-primary text-primary-foreground"
+                    : "text-muted-foreground hover:bg-muted hover:text-foreground"
+                }`}
               >
 
                 <Icon className="w-5 h-5" />
@@ -137,8 +120,7 @@ const DesktopSidebar = () => {
 
       </div>
 
-
-      {/* PROFILE */}
+      {/* Profile */}
 
       <div className="p-4 border-t border-border">
 
