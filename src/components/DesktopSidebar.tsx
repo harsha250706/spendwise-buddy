@@ -7,10 +7,7 @@ import {
   Wallet,
 } from "lucide-react";
 
-import {
-  useLocation,
-  useNavigate,
-} from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const navItems = [
   {
@@ -41,23 +38,36 @@ const navItems = [
 ];
 
 const DesktopSidebar = () => {
-  const location = useLocation();
   const navigate = useNavigate();
+  const location = useLocation();
 
   return (
-    <aside className="hidden lg:flex fixed left-0 top-0 bottom-0 z-40 w-64 bg-card border-r border-border flex-col">
+    <aside
+      style={{
+        width: "260px",
+        position: "fixed",
+        left: 0,
+        top: 0,
+        bottom: 0,
+        zIndex: 9999,
+      }}
+      className="hidden lg:flex flex-col bg-card border-r border-border"
+    >
 
-      {/* Logo */}
+      {/* LOGO */}
 
       <div className="h-20 flex items-center px-6 border-b border-border">
 
         <div className="flex items-center gap-3">
 
-          <div className="w-10 h-10 rounded-xl bg-gradient-teal flex items-center justify-center">
+          <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center">
+
             <Wallet className="w-5 h-5 text-primary-foreground" />
+
           </div>
 
           <div>
+
             <h1 className="font-display font-bold text-lg text-foreground">
               SpendSmart
             </h1>
@@ -65,52 +75,70 @@ const DesktopSidebar = () => {
             <p className="text-[10px] text-muted-foreground">
               Smart money management
             </p>
+
           </div>
 
         </div>
 
       </div>
 
-      {/* Navigation */}
 
-      <nav className="flex-1 p-4 space-y-2">
+      {/* NAVIGATION */}
 
-        <p className="text-[10px] uppercase tracking-wider text-muted-foreground font-semibold px-3 mb-3">
-          Menu
+      <div className="flex-1 px-4 py-6">
+
+        <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground px-3 mb-4">
+          Navigation
         </p>
 
-        {navItems.map((item) => {
+        <div className="space-y-2">
 
-          const Icon = item.icon;
+          {navItems.map((item) => {
 
-          const isActive =
-            location.pathname === item.path;
+            const Icon = item.icon;
 
-          return (
-            <button
-              key={item.path}
-              onClick={() => navigate(item.path)}
-              className={`w-full flex items-center gap-3 px-3 py-3 rounded-xl transition-all ${
-                isActive
-                  ? "bg-primary/10 text-primary font-semibold"
-                  : "text-muted-foreground hover:bg-muted hover:text-foreground"
-              }`}
-            >
+            const active =
+              location.pathname === item.path;
 
-              <Icon className="w-5 h-5 flex-shrink-0" />
+            return (
+              <button
+                key={item.path}
+                onClick={() => navigate(item.path)}
+                className={`
+                  w-full
+                  flex
+                  items-center
+                  gap-3
+                  px-4
+                  py-3
+                  rounded-xl
+                  transition-all
+                  text-left
+                  ${
+                    active
+                      ? "bg-primary text-primary-foreground"
+                      : "text-muted-foreground hover:bg-muted hover:text-foreground"
+                  }
+                `}
+              >
 
-              <span className="text-sm">
-                {item.label}
-              </span>
+                <Icon className="w-5 h-5" />
 
-            </button>
-          );
+                <span className="text-sm font-medium">
+                  {item.label}
+                </span>
 
-        })}
+              </button>
+            );
 
-      </nav>
+          })}
 
-      {/* Bottom profile section */}
+        </div>
+
+      </div>
+
+
+      {/* PROFILE */}
 
       <div className="p-4 border-t border-border">
 
@@ -119,13 +147,13 @@ const DesktopSidebar = () => {
           className="w-full flex items-center gap-3 p-3 rounded-xl hover:bg-muted transition-colors"
         >
 
-          <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-lg">
-            👨‍💻
+          <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+            <User className="w-5 h-5 text-primary" />
           </div>
 
-          <div className="flex-1 text-left min-w-0">
+          <div className="text-left">
 
-            <p className="text-sm font-semibold text-foreground truncate">
+            <p className="text-sm font-semibold text-foreground">
               Harsha
             </p>
 
