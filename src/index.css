@@ -121,4 +121,8 @@
   .font-body {
     font-family: var(--font-body);
   }
+}@media (max-width: 1023px) {
+  .desktop-sidebar {
+    display: none !important;
+  }
 }
