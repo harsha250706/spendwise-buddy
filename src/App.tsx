@@ -1,39 +1,55 @@
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
+import { Toaster as Sonner } from "@/components/ui/sonner";
+import { Toaster } from "@/components/ui/toaster";
+
+import { TooltipProvider } from "@/components/ui/tooltip";
+
 import BottomNav from "@/components/BottomNav";
-import Index from "./pages/Index";
-import InsightsPage from "./pages/InsightsPage";
-import ChatPage from "./pages/ChatPage";
-import GoalsPage from "./pages/GoalsPage";
-import ProfilePage from "./pages/ProfilePage";
 
-import NotFound from "./pages/NotFound";
+import DesktopSidebar from "@/components/DesktopSidebar";
 
-import AIChatBubble from "./components/AIChatBubble";
-import BottomNav from "./components/BottomNav";
+import AIChatBubble from "@/components/AIChatBubble";
+
+import Index from "./pages/Index.tsx";
+
+import InsightsPage from "./pages/InsightsPage.tsx";
+
+import ChatPage from "./pages/ChatPage.tsx";
+
+import GoalsPage from "./pages/GoalsPage.tsx";
+
+import ProfilePage from "./pages/ProfilePage.tsx";
+
+import NotFound from "./pages/NotFound.tsx";
+
 
 const queryClient = new QueryClient();
 
+
 const App = () => (
+
   <QueryClientProvider client={queryClient}>
 
     <TooltipProvider>
 
       <Toaster />
+
       <Sonner />
 
       <BrowserRouter>
 
-        <div className="min-h-screen w-full overflow-x-hidden">
+        {/* DESKTOP SIDEBAR */}
 
-  <DesktopSidebar />
+        <DesktopSidebar />
 
-  <div className="lg:ml-64">
 
-    <Routes>
+        {/* MAIN APPLICATION */}
+
+        <main className="lg:ml-[260px] min-h-screen">
+
           <Routes>
 
             <Route
@@ -68,17 +84,25 @@ const App = () => (
 
           </Routes>
 
-          <AIChatBubble />
+        </main>
 
-          <BottomNav />
 
-        </div>
+        {/* AI CHAT */}
+
+        <AIChatBubble />
+
+
+        {/* MOBILE NAVIGATION */}
+
+        <BottomNav />
 
       </BrowserRouter>
 
     </TooltipProvider>
 
   </QueryClientProvider>
+
 );
+
 
 export default App;
