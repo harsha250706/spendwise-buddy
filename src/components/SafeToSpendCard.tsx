@@ -4,6 +4,7 @@ import { Shield, TrendingUp } from "lucide-react";
 const SafeToSpendCard = () => {
   const safeAmount = 4500;
   const totalBudget = 12000;
+
   const percentage = (safeAmount / totalBudget) * 100;
 
   const getZoneColor = () => {
@@ -23,41 +24,69 @@ const SafeToSpendCard = () => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="bg-gradient-hero rounded-2xl p-5 text-primary-foreground shadow-float"
+      className="bg-gradient-hero rounded-2xl p-4 sm:p-5 text-primary-foreground shadow-float w-full"
       aria-label="Safe to spend predictor"
     >
+
       <div className="flex items-center gap-2 mb-1">
-        <Shield className="w-5 h-5" />
+        <Shield className="w-5 h-5 flex-shrink-0" />
+
         <h2 className="text-sm font-display font-semibold opacity-90">
           Safe to Spend This Week
         </h2>
       </div>
-      <div className="flex items-end gap-2 mb-3">
-        <span className="text-4xl font-display font-bold">₹{safeAmount.toLocaleString()}</span>
-        <span className="text-sm opacity-70 mb-1">of ₹{totalBudget.toLocaleString()}</span>
+
+      <div className="flex flex-wrap items-end gap-2 mb-3">
+
+        <span className="text-3xl sm:text-4xl font-display font-bold">
+          ₹{safeAmount.toLocaleString()}
+        </span>
+
+        <span className="text-sm opacity-70 mb-1">
+          of ₹{totalBudget.toLocaleString()}
+        </span>
+
       </div>
 
-      {/* Progress bar */}
-      <div className="relative h-3 rounded-full bg-primary-foreground/20 overflow-hidden mb-2">
+      {/* Progress */}
+      <div className="relative h-3 rounded-full bg-primary-foreground/20 overflow-hidden mb-3">
+
         <motion.div
           initial={{ width: 0 }}
           animate={{ width: `${percentage}%` }}
-          transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
+          transition={{
+            duration: 1,
+            ease: "easeOut",
+            delay: 0.3,
+          }}
           className={`absolute inset-y-0 left-0 rounded-full ${getZoneColor()}`}
         />
-        {/* Zone markers */}
+
         <div className="absolute inset-y-0 left-1/4 w-px bg-primary-foreground/20" />
         <div className="absolute inset-y-0 left-1/2 w-px bg-primary-foreground/20" />
         <div className="absolute inset-y-0 left-3/4 w-px bg-primary-foreground/20" />
+
       </div>
 
-      <div className="flex items-center justify-between">
-        <span className="text-xs opacity-80">{getZoneLabel()}</span>
+      {/* Bottom information */}
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+
+        <span className="text-xs opacity-80">
+          {getZoneLabel()}
+        </span>
+
         <div className="flex items-center gap-1 text-xs opacity-80">
-          <TrendingUp className="w-3 h-3" />
-          <span>12% better than last week</span>
+
+          <TrendingUp className="w-3 h-3 flex-shrink-0" />
+
+          <span>
+            12% better than last week
+          </span>
+
         </div>
+
       </div>
+
     </motion.section>
   );
 };
