@@ -51,7 +51,7 @@ const DesktopSidebar = () => {
         bottom: 0,
         zIndex: 9999,
       }}
-      className="hidden lg:flex flex-col bg-card border-r border-border"
+     className="flex flex-col bg-card border-r border-border"
     >
 
       {/* LOGO */}
