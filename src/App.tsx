@@ -4,51 +4,36 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
-
 import { TooltipProvider } from "@/components/ui/tooltip";
 
 import BottomNav from "@/components/BottomNav";
-
 import DesktopSidebar from "@/components/DesktopSidebar";
-
 import AIChatBubble from "@/components/AIChatBubble";
 
 import Index from "./pages/Index.tsx";
-
 import InsightsPage from "./pages/InsightsPage.tsx";
-
 import ChatPage from "./pages/ChatPage.tsx";
-
 import GoalsPage from "./pages/GoalsPage.tsx";
-
 import ProfilePage from "./pages/ProfilePage.tsx";
-
 import NotFound from "./pages/NotFound.tsx";
-
 
 const queryClient = new QueryClient();
 
-
 const App = () => (
-
   <QueryClientProvider client={queryClient}>
 
     <TooltipProvider>
 
       <Toaster />
-
       <Sonner />
 
       <BrowserRouter>
 
         {/* DESKTOP SIDEBAR */}
-
         <DesktopSidebar />
 
-
-        {/* MAIN APPLICATION */}
-
-        <main className="lg:ml-[260px] min-h-screen">
+        {/* MAIN CONTENT */}
+        <main className="min-h-screen lg:ml-[260px]">
 
           <Routes>
 
@@ -86,14 +71,10 @@ const App = () => (
 
         </main>
 
-
         {/* AI CHAT */}
-
         <AIChatBubble />
 
-
-        {/* MOBILE NAVIGATION */}
-
+        {/* MOBILE BOTTOM NAVIGATION */}
         <BottomNav />
 
       </BrowserRouter>
@@ -101,8 +82,6 @@ const App = () => (
     </TooltipProvider>
 
   </QueryClientProvider>
-
 );
-
 
 export default App;
