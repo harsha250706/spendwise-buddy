@@ -62,7 +62,7 @@ const ChatPage = () => {
     <main className="min-h-screen bg-background flex flex-col">
       {/* Header */}
       <header className="bg-gradient-hero px-4 pt-12 pb-4">
-        <div className="max-w-lg mx-auto flex items-center gap-3">
+        <div className="w-full max-w-5xl mx-auto flex items-center gap-3 px-4 sm:px-6 lg:px-8">
           <img
             src={walletAvatar}
             alt="SpendSmart AI assistant avatar"
@@ -81,7 +81,7 @@ const ChatPage = () => {
       </header>
 
       {/* Messages */}
-      <div className="flex-1 max-w-lg mx-auto w-full overflow-y-auto px-4 py-4 space-y-3 pb-44">
+    <div className="flex-1 w-full max-w-5xl mx-auto overflow-y-auto px-4 sm:px-6 lg:px-8 py-4 space-y-3 pb-44">
         {messages.map((msg) => (
           <motion.div
             key={msg.id}
@@ -104,7 +104,7 @@ const ChatPage = () => {
 
       {/* Quick Queries */}
       <div className="fixed bottom-28 left-0 right-0 px-4">
-        <div className="max-w-lg mx-auto flex gap-2 overflow-x-auto pb-2 scrollbar-hide">
+       <div className="w-full max-w-5xl mx-auto flex gap-2 overflow-x-auto scrollbar-hide">
           {quickQueries.map((q) => (
             <button
               key={q}
@@ -119,7 +119,7 @@ const ChatPage = () => {
 
       {/* Input */}
       <div className="fixed bottom-16 left-0 right-0 bg-card border-t border-border p-3">
-        <div className="max-w-lg mx-auto flex gap-2">
+      <div className="w-full max-w-5xl mx-auto flex gap-2">
           <input
             type="text"
             value={input}
