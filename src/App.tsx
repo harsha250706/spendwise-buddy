@@ -27,16 +27,13 @@ const App = () => (
       <Toaster />
       <Sonner />
 
-      <BrowserRouter>
+     <BrowserRouter>
 
-        {/* DESKTOP SIDEBAR */}
-        <DesktopSidebar />
+<DesktopSidebar />
 
-        {/* MAIN CONTENT */}
-        <main className="min-h-screen lg:ml-[260px]">
+<main className="lg:ml-[260px] min-h-screen">
 
-          <Routes>
-
+<Routes>
             <Route
               path="/"
               element={<Index />}
@@ -67,18 +64,15 @@ const App = () => (
               element={<NotFound />}
             />
 
-          </Routes>
+         </Routes>
 
-        </main>
+</main>
 
-        {/* AI CHAT */}
-        <AIChatBubble />
+<AIChatBubble />
 
-        {/* MOBILE BOTTOM NAVIGATION */}
-        <BottomNav />
+<BottomNav />
 
-      </BrowserRouter>
-
+</BrowserRouter>
     </TooltipProvider>
 
   </QueryClientProvider>
