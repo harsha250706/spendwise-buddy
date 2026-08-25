@@ -34,7 +34,7 @@ const GoalsPage = () => {
   return (
     <main className="min-h-screen bg-background pb-24">
       <header className="bg-gradient-hero px-4 pt-12 pb-6">
-        <div className="max-w-lg mx-auto flex items-center justify-between">
+       <div className="w-full max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8">
           <div>
             <h1 className="text-2xl font-display font-bold text-primary-foreground">
               Goals & Streaks
@@ -49,7 +49,7 @@ const GoalsPage = () => {
         </div>
       </header>
 
-      <div className="max-w-lg mx-auto px-4 -mt-2 space-y-4">
+    <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-2 py-4 lg:py-6 space-y-5">
         {/* Savings Goals */}
         <motion.section
           initial={{ opacity: 0, y: 20 }}
