@@ -12,6 +12,10 @@ import piggyBank from "@/assets/piggy-bank.png";
 
 const Dashboard = () => {
   return (
+    <SEO
+  title="SpendWise – Personal Finance Dashboard"
+  description="Track your expenses, monitor your budget, manage your money, and build better financial habits with SpendWise."
+/>
     <main className="min-h-screen w-full bg-background pb-24 overflow-x-hidden">
 
       {/* HEADER */}
