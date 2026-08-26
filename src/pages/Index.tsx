@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Bell, Search } from "lucide-react";
-
+import SEO from "@/components/SEO";
 import SafeToSpendCard from "@/components/SafeToSpendCard";
 import SpendingBreakdown from "@/components/SpendingBreakdown";
 import SavingStreaks from "@/components/SavingStreaks";
