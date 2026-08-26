@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import SEO from "@/components/SEO";
 import {
   BarChart,
   Bar,
@@ -50,17 +51,22 @@ const insights = [
 
 const InsightsPage = () => {
   return (
+    <>
+      <SEO
+        title="SpendWise – Spending Insights"
+        description="Understand your spending habits, analyze weekly and monthly expenses, and discover opportunities to save money."
+      />
     <main className="min-h-screen bg-background pb-24">
       {/* Header */}
       <header className="bg-gradient-hero px-4 pt-12 pb-6">
         <div className="w-full max-w-7xl mx-auto">
           <h1 className="text-2xl font-display font-bold text-primary-foreground">
-            Spending Insights
-          </h1>
+  Spending Insights
+</h1>
 
-          <p className="text-sm text-primary-foreground/70 mt-1">
-            Understand where your money goes 📊
-          </p>
+<p className="text-sm text-primary-foreground/70 mt-1">
+  Understand your spending habits and discover opportunities to save more.
+</p>
         </div>
       </header>
 
