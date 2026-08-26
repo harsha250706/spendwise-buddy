@@ -33,13 +33,12 @@ const Dashboard = () => {
             />
 
             <div className="min-w-0">
-              <h1 className="text-lg font-display font-bold text-foreground leading-none truncate">
-                SpendSmart
-              </h1>
-
-              <p className="text-[10px] text-muted-foreground truncate">
-                Track Expenses via SMS
-              </p>
+              <h1>
+  Your Financial Dashboard
+</h1>
+              <p>
+  Track your spending, manage your budget, and build better money habits.
+</p>
             </div>
 
           </div>
